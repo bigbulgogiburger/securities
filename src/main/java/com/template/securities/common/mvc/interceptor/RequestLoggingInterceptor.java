@@ -23,7 +23,7 @@ public class RequestLoggingInterceptor implements HandlerInterceptor {
 
         if (request instanceof CustomHttpServletRequestWrapper) {
             CustomHttpServletRequestWrapper requestWrapper = (CustomHttpServletRequestWrapper) request;
-            log.info("[{}] requestURI : {}", requestWrapper.getKey(), requestWrapper.getRequestURI());
+            log.info("[{}] method : {}, requestURI : {}", requestWrapper.getKey(), request.getMethod(), requestWrapper.getRequestURI());
 
             Map<String, List<String>> headers = retrieveHeaderFromRequest(request);
             if(!headers.isEmpty()){
