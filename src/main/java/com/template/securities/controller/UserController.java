@@ -1,6 +1,7 @@
 package com.template.securities.controller;
 
 
+import com.template.securities.dto.TestDto;
 import com.template.securities.dto.UserDto;
 import com.template.securities.domain.User;
 import com.template.securities.service.UserService;
@@ -35,6 +36,11 @@ public class UserController {
     @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<User> getUserInfo(@PathVariable String username){
         return ResponseEntity.ok(userService.getUserWithAuthorities(username));
+    }
+
+    @PostMapping("/user")
+    public ResponseEntity<User> getUserInfo(@RequestBody TestDto testDto){
+        return ResponseEntity.ok(userService.getUserWithAuthorities(testDto.getUserName()));
     }
 
 }
