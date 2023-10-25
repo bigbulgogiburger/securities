@@ -3,13 +3,16 @@ package com.template.securities.common.mvc.interceptor;
 import com.template.securities.common.mvc.context.CustomHttpServletRequestWrapper;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.multipart.support.AbstractMultipartHttpServletRequest;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
 
+/**
+ * request가 들어왔을 때에
+ * method, requestURI, Header정보를 가지고 info level의 로그를 남긴다.
+ */
 @Slf4j
 public class RequestLoggingInterceptor implements HandlerInterceptor {
 
