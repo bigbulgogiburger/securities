@@ -1,5 +1,11 @@
 package com.template.securities.common.exception;
 
+
+/**
+ * ERROR MESSAGES
+ * 해당 String은 error로 handling이 되었을 때에 message.properties에서
+ * key로서 사용된다.
+ * */
 public class CommonErrorCodes {
 
     public static final String NOT_FOUND_ERROR = "error.not.found";

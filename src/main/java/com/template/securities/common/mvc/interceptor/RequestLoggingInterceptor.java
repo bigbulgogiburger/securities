@@ -12,6 +12,7 @@ import java.util.*;
 /**
  * request가 들어왔을 때에
  * method, requestURI, Header정보를 가지고 info level의 로그를 남긴다.
+ * CustomHttpServletRequestWrapper로 감싸져있는 request일 경우에만 로그를 남긴다.
  */
 @Slf4j
 public class RequestLoggingInterceptor implements HandlerInterceptor {

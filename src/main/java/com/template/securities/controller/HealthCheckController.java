@@ -17,5 +17,6 @@ public class HealthCheckController {
     @GetMapping
     public ResponseEntity<String> hello(){
         return ResponseEntity.ok("service is running : " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+
     }
 }
