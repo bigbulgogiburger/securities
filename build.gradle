@@ -33,17 +33,19 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'io.github.openfeign:feign-okhttp'
 
-	//querydsl start
+	//querydsl config start
 	implementation 'com.querydsl:querydsl-core:5.0.0'
 	implementation 'com.querydsl:querydsl-jpa:5.0.0'
 	implementation 'com.querydsl:querydsl-sql:5.0.0'
 	annotationProcessor 'com.querydsl:querydsl-apt:5.0.0:jpa'
-//	annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa"
 	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
-	//querydsl end
-
-
 	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+	//querydsl config end
+
+
+//	html은 프로그래밍 언어가 아닙니다.. 태그 언어에요
+//	javascript는 java랑 다릅니다
+
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
