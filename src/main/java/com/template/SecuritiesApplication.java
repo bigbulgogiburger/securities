@@ -12,6 +12,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import java.time.Clock;
 import java.time.ZoneId;
 
+/**
+ * enablexxx -> 프록시 생성이라고 생각하면 쉽습니다.
+ * @EnableWebSecurity : 스프링 시큐리티를 사용할 것이다.
+ * @EnableConfigurationProperties : @ConfigurationProperties를 사용할 것이다.
+ * @EnableFeignClients : feign을 사용할 것이다.
+ * @EnableAspectJAutoProxy : Spring aop를 사용할 것이다.
+ * 		ErrorMvcAutoConfiguration.class,
+ * 		SecurityAutoConfiguration.class
+ * 	위 두클래스를 exclude하여, Springsecurity가 기본으로 작동하지 않게 하고, mvcConfiguration도 자동으로 작동하지 않게 한다.
+ */
 @EnableWebSecurity
 @EnableConfigurationProperties
 @EnableFeignClients

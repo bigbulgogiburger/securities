@@ -1,8 +1,8 @@
 package com.template.securities.service;
 
+import com.template.securities.domain.Users;
 import com.template.securities.dto.UserDto;
 import com.template.securities.domain.Authority;
-import com.template.securities.domain.User;
 import com.template.securities.repository.UserRepository;
 import com.template.securities.common.security.utils.SecurityUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,7 +22,7 @@ public class UserService {
     }
 
     @Transactional
-    public User signup(UserDto userDto) {
+    public Users signup(UserDto userDto) {
         if (userRepository.findOneWithAuthoritiesByUsername(userDto.getUsername()).orElse(null) != null) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다.");
         }
@@ -31,7 +31,7 @@ public class UserService {
                 .authorityName("ROLE_USER")
                 .build();
 
-        User user = User.builder()
+        Users users = Users.builder()
                 .username(userDto.getUsername())
                 .password(passwordEncoder.encode(userDto.getPassword()))
                 .nickname(userDto.getNickname())
@@ -39,16 +39,16 @@ public class UserService {
                 .activated(true)
                 .build();
 
-        return userRepository.save(user);
+        return userRepository.save(users);
     }
 
     @Transactional(readOnly = true)
-    public User getUserWithAuthorities(String username) {
+    public Users getUserWithAuthorities(String username) {
         return userRepository.findOneWithAuthoritiesByUsername(username).orElse(null);
     }
 
     @Transactional(readOnly = true)
-    public User getMyUserWithAuthorities() {
+    public Users getMyUserWithAuthorities() {
         return
                 SecurityUtil.getCurrentUsername()
                         .flatMap(userRepository::findOneWithAuthoritiesByUsername)
