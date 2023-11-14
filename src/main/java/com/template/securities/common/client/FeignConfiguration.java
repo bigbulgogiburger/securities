@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * feign client 설정
+ * OkHttpClient를 쓰는 이유
  */
 @Configuration
 public class FeignConfiguration {

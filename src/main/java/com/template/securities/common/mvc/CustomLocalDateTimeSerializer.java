@@ -16,6 +16,11 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
+
+/**
+ * Object를 json body로 serialization을 할 때에,
+ * target이 LocalDateTime이면 해당 serializer를 거치게된다.
+ */
 public class CustomLocalDateTimeSerializer extends JsonSerializer<LocalDateTime> {
 
     public static final ZoneOffset KOREAN_ZONE_OFFSET = ZoneOffset.of("+09:00");

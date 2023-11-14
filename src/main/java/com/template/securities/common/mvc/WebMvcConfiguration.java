@@ -18,6 +18,12 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * WebMvcConfigurer를 상속받아서 mvc 구조를 configure한다.
+ * configuration이 있으면, component scan에서 추적되며,
+ * 내부 메소드에 @Bean이 있으면 Spring bean으로 등록되게 된다.
+ *
+ */
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
 

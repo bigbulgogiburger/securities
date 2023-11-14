@@ -1,5 +1,9 @@
 package com.template.securities.common.exception;
 
+
+/**
+ * 허용되지 않은 정보를 가진 회원일때에(unauthorized)
+ */
 public class DeniedException extends UncheckedMainException{
 
 

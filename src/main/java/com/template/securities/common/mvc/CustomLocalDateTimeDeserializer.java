@@ -18,6 +18,11 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
+
+/**
+ * Json serialized Body를 deserialize 하는 과정에서
+ * 응답값을 LocalDateTime Type으로 받으려할 때에, 해당 deserializer를 거친다.
+ */
 public class CustomLocalDateTimeDeserializer extends JsonDeserializer<LocalDateTime> {
 
 

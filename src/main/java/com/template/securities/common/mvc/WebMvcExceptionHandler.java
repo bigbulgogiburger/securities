@@ -21,9 +21,16 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.time.Clock;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * Exception이 발생하게 되었을 때에, 잡을 수 있는 Exception(정의가 되어있는)인 경우
+ * 해당 Exception Handler로 넘어오게 된다.
+ * Exception class도 잡기 때문에 거의 대부분의 예외는 잡힌다. (vm에러나 스프링 외부의 exception 이런건 안잡힘)
+ * RestControllerAdvice는 ControllerAdvice에 ResponseBody가 추가된 것이다.
+ * return타입이 무엇이 되었던, ResponseEntity로 전달
+ *
+ */
 @Slf4j
 @RestControllerAdvice
 @RequiredArgsConstructor
