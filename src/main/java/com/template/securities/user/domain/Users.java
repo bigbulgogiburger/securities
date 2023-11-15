@@ -1,4 +1,4 @@
-package com.template.securities.domain;
+package com.template.securities.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

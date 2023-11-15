@@ -1,7 +1,7 @@
-package com.template.securities.repository;
+package com.template.securities.user.repository;
 
-import com.template.securities.domain.QUsers;
-import com.template.securities.domain.Users;
+import com.template.securities.user.domain.QUsers;
+import com.template.securities.user.domain.Users;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
 import java.util.Optional;

@@ -1,10 +1,10 @@
-package com.template.securities.controller;
+package com.template.securities.user.controller;
 
 
-import com.template.securities.domain.Users;
-import com.template.securities.dto.TestDto;
-import com.template.securities.dto.UserDto;
-import com.template.securities.service.UserService;
+import com.template.securities.user.domain.Users;
+import com.template.securities.user.dto.TestDto;
+import com.template.securities.user.dto.UserDto;
+import com.template.securities.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

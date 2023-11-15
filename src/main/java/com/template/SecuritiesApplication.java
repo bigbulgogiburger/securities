@@ -1,5 +1,6 @@
 package com.template;
 
+import com.template.securities.common.aop.CommonAspect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -7,6 +8,7 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import java.time.Clock;
@@ -26,6 +28,7 @@ import java.time.ZoneId;
 @EnableConfigurationProperties
 @EnableFeignClients
 @EnableAspectJAutoProxy
+//@Import(CommonAspect.class)
 @SpringBootApplication(exclude = {
 		ErrorMvcAutoConfiguration.class,
 		SecurityAutoConfiguration.class})

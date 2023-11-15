@@ -1,7 +1,7 @@
-package com.template.securities.controller;
+package com.template.securities.user.controller;
 
-import com.template.securities.dto.LoginDto;
-import com.template.securities.dto.TokenDto;
+import com.template.securities.user.dto.LoginDto;
+import com.template.securities.user.dto.TokenDto;
 import com.template.securities.common.security.jwt.JwtFilter;
 import com.template.securities.common.security.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;

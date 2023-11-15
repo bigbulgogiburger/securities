@@ -1,4 +1,4 @@
-package com.template.securities.dto;
+package com.template.securities.user.dto;
 
 import lombok.Data;
 

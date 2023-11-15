@@ -1,7 +1,7 @@
-package com.template.securities.service;
+package com.template.securities.user.service;
 
-import com.template.securities.domain.Users;
-import com.template.securities.repository.UserRepository;
+import com.template.securities.user.domain.Users;
+import com.template.securities.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

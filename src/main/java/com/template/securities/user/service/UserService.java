@@ -1,9 +1,9 @@
-package com.template.securities.service;
+package com.template.securities.user.service;
 
-import com.template.securities.domain.Users;
-import com.template.securities.dto.UserDto;
-import com.template.securities.domain.Authority;
-import com.template.securities.repository.UserRepository;
+import com.template.securities.user.domain.Users;
+import com.template.securities.user.dto.UserDto;
+import com.template.securities.user.domain.Authority;
+import com.template.securities.user.repository.UserRepository;
 import com.template.securities.common.security.utils.SecurityUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
