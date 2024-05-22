@@ -1,9 +1,12 @@
 package com.template.securities.user.controller;
 
 import com.template.securities.user.dto.LoginDto;
+import com.template.securities.user.dto.RefreshRequest;
+import com.template.securities.user.dto.RefreshResponse;
 import com.template.securities.user.dto.TokenDto;
 import com.template.securities.common.security.jwt.JwtFilter;
 import com.template.securities.common.security.jwt.TokenProvider;
+import com.template.securities.user.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -23,24 +26,19 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 public class AuthController {
-    private final TokenProvider tokenProvider;
-    private final AuthenticationManagerBuilder authenticationManagerBuilder;
+
+    private final AuthService authService;
 
 
-    @PostMapping("/authenticate")
+    @PostMapping("/login")
     public ResponseEntity<TokenDto> authorize(@Valid @RequestBody LoginDto loginDto){
-        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword());
 
-        Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        return authService.login(loginDto);
 
-        String accessToken = tokenProvider.createAccessToken(authentication);
-//        String refreshToken = tokenProvider.createRefreshToken(authentication);
+    }
 
-
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add(JwtFilter.AUTHORIZATION_HEADER,"Bearer "+accessToken);
-
-        return new ResponseEntity<>(new TokenDto(accessToken),httpHeaders, HttpStatus.OK);
+    @PostMapping("/refresh")
+    public ResponseEntity<RefreshResponse> refreshToken(@Valid @RequestBody RefreshRequest request){
+        return authService.refreshToken(request);
     }
 }

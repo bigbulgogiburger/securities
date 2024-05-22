@@ -5,12 +5,15 @@ import com.template.securities.user.dto.UserDto;
 import com.template.securities.user.domain.Authority;
 import com.template.securities.user.repository.UserRepository;
 import com.template.securities.common.security.utils.SecurityUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 
+@Slf4j
+@Transactional
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -21,7 +24,6 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Transactional
     public Users signup(UserDto userDto) {
         if (userRepository.findOneWithAuthoritiesByUsername(userDto.getUsername()).orElse(null) != null) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다.");
@@ -42,12 +44,10 @@ public class UserService {
         return userRepository.save(users);
     }
 
-    @Transactional(readOnly = true)
     public Users getUserWithAuthorities(String username) {
         return userRepository.findOneWithAuthoritiesByUsername(username).orElse(null);
     }
 
-    @Transactional(readOnly = true)
     public Users getMyUserWithAuthorities() {
         return
                 SecurityUtil.getCurrentUsername()

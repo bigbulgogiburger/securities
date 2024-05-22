@@ -6,12 +6,11 @@ import lombok.Getter;
 /**
  * 이곳에서 쓰일 모든 unchecked Exception의 parent
  */
+@Getter
 public class UncheckedMainException extends RuntimeException{
 
-    @Getter
     private final String errorCode;
 
-    @Getter
     private final Object[] args;
 
 
