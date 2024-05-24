@@ -109,4 +109,14 @@ public class TokenProvider implements InitializingBean {
         }
         return false;
     }
+    public boolean isExpiredButValidToken(String accessToken){
+        try{
+            Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(accessToken);
+            return true;
+        }catch (ExpiredJwtException e){
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }

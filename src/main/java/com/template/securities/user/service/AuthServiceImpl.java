@@ -65,6 +65,12 @@ public class AuthServiceImpl implements AuthService{
     @Override
     public ResponseEntity<RefreshResponse> refreshToken(RefreshRequest request) {
         String accessToken = request.getAccessToken();
+        boolean isExpiredButValid = tokenProvider.isExpiredButValidToken(accessToken);
+
+        if(isExpiredButValid){
+
+        }
+
         return null;
     }
 }
