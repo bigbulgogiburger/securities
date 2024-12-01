@@ -36,3 +36,6 @@ jwt:
   refresh:
     secret: agdfkpnasdpkgnpknKPVNPKVNCKPVNPFUOJNGJKD8236469123541425y8VASDFKDSJHButndsfljgsredjlfjngPSJNODGNPSDgknpyhkjnyhnjfjgndsajgnGGHGJGJGJ
     token-validity-in-seconds: 864000
+
+internal:
+  token: hwangingyu11n11ln1knlk1lnlkn12nlkasdfklnasdflsdfhiasdb
